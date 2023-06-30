@@ -6,6 +6,9 @@ import java.time.LocalDateTime;
 
 @Data
 public class MarkDTO {
-    public Object markLocation;
+
+
+    public Float longitude;
+    public Float latitude;
     public Object markContent;
 }
