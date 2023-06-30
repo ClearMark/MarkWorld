@@ -1,6 +1,7 @@
 package com.markWorld.controller;
 
 import com.markWorld.PutchMapping;
+import com.markWorld.dto.MarkDTO;
 import com.markWorld.entity.ResultResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/mark")
 public class MarkController {
     @PostMapping()
-    public ResultResponse mark() {
+    public ResultResponse mark(@RequestBody MarkDTO markDTO) {
         System.out.println("标记成功");
         return ResultResponse.ok();
     }

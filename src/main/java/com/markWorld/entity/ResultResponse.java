@@ -14,7 +14,7 @@ public class ResultResponse {
     private page pageInfo;
 
     public static ResultResponse ok(){
-        ResultResponse ok = ok(ResultResponseEnum.SUCCESS);
+        ResultResponse ok = create(ResultResponseEnum.SUCCESS);
         return ok;
     }
     public static ResultResponse ok(Object data){
@@ -22,16 +22,23 @@ public class ResultResponse {
         ok.setData(data);
         return ok;
     }
-    public static ResultResponse ok(ResultResponseEnum resultResponseEnum) {
+    public static ResultResponse create(ResultResponseEnum resultResponseEnum) {
         ResultResponse resultResponse = new ResultResponse();
         resultResponse.setCode(resultResponseEnum.getCode());
         resultResponse.setMsg(resultResponseEnum.getMsg());
         return resultResponse;
     }
 
-
-
-
+    public static ResultResponse fail() {
+        ResultResponse fail = create(ResultResponseEnum.FAIL);
+        return fail;
+    }
+    public static ResultResponse fail(MarkWorldExceptionEnum markWorldExceptionEnum) {
+        ResultResponse resultResponse = new ResultResponse();
+        resultResponse.setCode(markWorldExceptionEnum.getCode());
+        resultResponse.setMsg(markWorldExceptionEnum.getMsg());
+        return resultResponse;
+    }
 }
 class page{
     private Integer page;

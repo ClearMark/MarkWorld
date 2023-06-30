@@ -6,7 +6,7 @@ import lombok.Data;
 @AllArgsConstructor
 public enum ResultResponseEnum {
     SUCCESS(200, "success"),
-    ERROR(500, "error")
+    FAIL(500, "error")
     ;
     private Integer code;
 
