@@ -1,4 +1,4 @@
-package com.markWorld.controller.entity;
+package com.markWorld.entity;
 
 import lombok.Data;
 
